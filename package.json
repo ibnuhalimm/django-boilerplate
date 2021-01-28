@@ -1,0 +1,26 @@
+{
+  "name": "demo-crud",
+  "version": "1.0.0",
+  "description": "Django-Boilerplate is minimimal pre-configure django framework for development.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run build",
+    "build": "postcss static/src/css/style.css -o static/css/style.css",
+    "prod": "npm run production",
+    "production": "env NODE_ENV=production postcss static/src/css/style.css -o static/css/style.css"
+  },
+  "author": "ibnu halim mustofa",
+  "license": "MIT",
+  "dependencies": {
+    "@fullhuman/postcss-purgecss": "^4.0.0",
+    "autoprefixer": "^10.2.3",
+    "cssnano": "^4.1.10",
+    "postcss": "^8.2.4",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}
