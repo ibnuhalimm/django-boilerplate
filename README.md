@@ -5,7 +5,7 @@ Django-Boilerplate is minimimal pre-configure django framework for development.
 - [Python Pip](https://pip.pypa.io/en/stable/installing/)
 - [Virtualenv](https://virtualenv.pypa.io/en/latest/installation.html)
 
-## Get started
+## How To
 - Clone this repo
 ```bash
 $~ git clone https://github.com/ibnuhalimm/django-boilerplate.git <your-project-name>
