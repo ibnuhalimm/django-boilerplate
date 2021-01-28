@@ -16,7 +16,7 @@ $~ git clone https://github.com/ibnuhalimm/django-boilerplate.git <your-project-
 $~ virtualenv <your-project-name>
 ```
 
-- Enter your project
+- Go to your project
 ```bash
 $~ cd <your-project-name>
 ```
@@ -31,7 +31,18 @@ $~ source bin/activate
 $~ pip install -r requirements.txt
 ```
 
-- You're ready!
+- Setup .env file
+```bash
+$~ cp config/.env.example config/.env
+```
+
+- Generate new SECRET KEY
+```bash
+$~ python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'
+```
+When we run above code, it will printed 50 characters random string. Please copy it into .env file as `SECREY_KEY`
+
+- Great, you're ready!
 
 
 ## License
