@@ -14,10 +14,14 @@ import environ
 from pathlib import Path
 
 env = environ.Env(
-    DEBUG=(bool, False)
+    APP_DEBUG = (bool, False),
+    APP_URL = (str, 'http://localhost:8000')
 )
 # Reading .env file
 environ.Env.read_env()
+
+# App URL
+APP_URL = str(env('APP_URL'))
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -30,7 +34,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env('DEBUG')
+DEBUG = env('APP_DEBUG')
 
 ALLOWED_HOSTS = ['*']
 
@@ -114,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = env('TIMEZONE')
+TIME_ZONE = 'UTC'
 
 USE_I18N = True
 
@@ -126,7 +130,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = APP_URL + '/static/'
 
 STATICFILES_DIRS = [
     BASE_DIR.joinpath('static')
